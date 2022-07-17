@@ -1,0 +1,23 @@
+.article__content, .article, .root__main, .root__header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.article__content, .article__header__desc, .article__header__heading {
+  margin: 20px 50px;
+}
+
+.root__main {
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.article {
+  flex-direction: column;
+  margin: 15px;
+  border: 2px solid rgb(51, 51, 255);
+}
+.article__content {
+  flex-direction: column;
+}

@@ -1,0 +1,40 @@
+%flex {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+%article--margins {
+    margin: 20px 50px;
+}
+
+.root {
+    &__header {
+        @extend %flex;
+    }
+    &__main {
+        @extend %flex;
+        justify-content: center;
+        padding: 10px 20px;
+    }
+}
+
+.article {
+    @extend %flex;
+    flex-direction: column;
+    margin: 15px;
+    border: 2px solid rgb(51, 51, 255);
+    &__header {
+        &__heading {
+            @extend %article--margins;
+        }
+        &__desc {
+            @extend %article--margins;
+        }
+    }
+    &__content {
+        @extend %article--margins;
+        @extend %flex;
+        flex-direction: column;
+    }
+}

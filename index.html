@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/script.js" type="module" defer></script>
+        <title>Morse Code Translator</title>
+    </head>
+    <body class="root">
+        <header class="root__header">
+            <h1>Morse Code Translator</h1>
+        </header>
+        <main class="root__main">
+            <article class="article">
+                <header class="article__header">
+                    <h2 class="article__header__heading">English to Morse</h2>
+                    <small class="article__header__desc">
+                        Converts english text into morse code
+                    </small>
+                </header>
+                <section class="article__content">
+                    <label>Input:</label>
+                    <textarea id="englishInput" cols="30" rows="10"></textarea>
+                    <button id="engToMorBtn">Translate!</button>
+                    <label>Output:</label>
+                    <textarea
+                        readonly
+                        id="engToMorOutput"
+                        cols="30"
+                        rows="10"
+                    ></textarea>
+                </section>
+            </article>
+            <article class="article">
+                <header class="article__header">
+                    <h2 class="article__header__heading">Morse to English</h2>
+                    <small class="article__header__desc">
+                        Converts morse text into english
+                    </small>
+                </header>
+                <section class="article__content">
+                    <label>Input:</label>
+                    <textarea id="morseInput" cols="30" rows="10"></textarea>
+                    <button id="morToEngBtn">Translate!</button>
+                    <label>Output:</label>
+                    <textarea
+                        readonly
+                        spellcheck="true"
+                        id="morToEngOutput"
+                        cols="30"
+                        rows="10"
+                    ></textarea>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
