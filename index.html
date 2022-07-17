@@ -10,6 +10,12 @@
     </head>
     <body class="root">
         <header class="root__header">
+            <img
+                src="./images/svg/morse-code-typer.svg"
+                alt="Morse Code Typer"
+                height="100"
+                width="100"
+            />
             <h1>Morse Code Translator</h1>
         </header>
         <main class="root__main">
@@ -23,10 +29,11 @@
                 <section class="article__content">
                     <label>Input:</label>
                     <textarea id="englishInput" cols="30" rows="10"></textarea>
-                    <button id="engToMorBtn">Translate!</button>
+                    <button id="engToMorBtn">Translate</button>
                     <label>Output:</label>
                     <textarea
                         readonly
+                        spellcheck="true"
                         id="engToMorOutput"
                         cols="30"
                         rows="10"
@@ -43,11 +50,10 @@
                 <section class="article__content">
                     <label>Input:</label>
                     <textarea id="morseInput" cols="30" rows="10"></textarea>
-                    <button id="morToEngBtn">Translate!</button>
+                    <button id="morToEngBtn">Translate</button>
                     <label>Output:</label>
                     <textarea
                         readonly
-                        spellcheck="true"
                         id="morToEngOutput"
                         cols="30"
                         rows="10"
