@@ -1,4 +1,4 @@
-const morseCodex = {
+const encoder = {
     A: ".-",
     B: "-...",
     C: "-.-.",
@@ -56,17 +56,26 @@ const morseCodex = {
     " ": "/"
 };
 
-export const engToMor = (english) => {
-    return english
-        .split("")
-        .map((char) => (char = morseCodex[char.toUpperCase()]))
-        .join(" ");
+const decoder = Object.entries(encoder).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+}, {});
+
+export const Translate = (
+    input,
+    translator,
+    splitDelim = "",
+    joinDelim = " "
+) => {
+    const strArr = input.split(splitDelim);
+    strArr.every();
+    return input.map((char) => translator[char]).join(joinDelim);
 };
 
 export const morToEng = (morse) => {
-    const keys = Object.keys(morseCodex);
+    const keys = Object.keys(encoder);
     return morse
         .split(" ")
-        .map((code) => keys.find((key) => morseCodex[key] === code))
+        .map((code) => keys.find((key) => encoder[key] === code))
         .join("");
 };
