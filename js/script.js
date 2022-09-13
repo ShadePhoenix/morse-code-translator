@@ -1,20 +1,34 @@
-import { engToMor, morToEng } from "./morse.js";
+import translate from "./translator.js";
 
-const engInput = document.getElementById("englishInput");
-const morInput = document.getElementById("morseInput");
+const input = document.getElementById("input");
+//const morInput = document.getElementById("morseInput");
 
-const engToMorOutput = document.getElementById("engToMorOutput");
-const morToEngOutput = document.getElementById("morToEngOutput");
+const output = document.getElementById("output");
+//const morToEngOutput = document.getElementById("morToEngOutput");
 
-const engSubmitBtn = document.getElementById("engToMorBtn");
-engSubmitBtn.addEventListener("click", submitEngInput);
-const morSubmitBtn = document.getElementById("morToEngBtn");
-morSubmitBtn.addEventListener("click", submitMorInput);
+const translatorSelect = document.getElementById("translationType");
 
-function submitEngInput() {
-    engToMorOutput.value = engToMor(engInput.value);
-}
+const clearAll = () => {
+    input.value = "";
+    output.value = "";
+};
 
-function submitMorInput() {
-    morToEngOutput.value = morToEng(morInput.value);
-}
+translatorSelect.onchange = clearAll;
+
+const submitBtn = document.getElementById("translate");
+// const morSubmitBtn = document.getElementById("morToEngBtn");
+// morSubmitBtn.addEventListener("click", translateSumbit);
+
+const translateSumbit = () => {
+    const isEncoder = translatorSelect.value == "false" ? false : true;
+    console.log(isEncoder);
+    const translation = translate(
+        input.value,
+        isEncoder,
+        isEncoder ? "" : " ",
+        isEncoder ? " " : ""
+    );
+    output.value = translation;
+    input.value = "";
+};
+submitBtn.addEventListener("click", translateSumbit);

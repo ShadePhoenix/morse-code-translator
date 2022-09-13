@@ -21,26 +21,28 @@
         <main class="root__main">
             <article class="article">
                 <header class="article__header">
-                    <h2 class="article__header__heading">English to Morse</h2>
-                    <small class="article__header__desc">
-                        Converts english text into morse code
-                    </small>
+                    <h2 class="article__header__heading">Translator</h2>
                 </header>
                 <section class="article__content">
+                    <label for="translationType"></label>
+                    <select name="translationType" id="translationType">
+                        <option value="true">English ---> Morse</option>
+                        <option value="false">Morse ---> English</option>
+                    </select>
                     <label>Input:</label>
-                    <textarea id="englishInput" cols="30" rows="10"></textarea>
-                    <button id="engToMorBtn">Translate</button>
+                    <textarea id="input" cols="30" rows="10"></textarea>
+                    <button id="translate">Translate</button>
                     <label>Output:</label>
                     <textarea
                         readonly
                         spellcheck="true"
-                        id="engToMorOutput"
+                        id="output"
                         cols="30"
                         rows="10"
                     ></textarea>
                 </section>
             </article>
-            <article class="article">
+            <!-- <article class="article">
                 <header class="article__header">
                     <h2 class="article__header__heading">Morse to English</h2>
                     <small class="article__header__desc">
@@ -59,7 +61,7 @@
                         rows="10"
                     ></textarea>
                 </section>
-            </article>
+            </article> -->
         </main>
     </body>
 </html>

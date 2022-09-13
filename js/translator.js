@@ -61,21 +61,26 @@ const decoder = Object.entries(encoder).reduce((acc, [key, value]) => {
     return acc;
 }, {});
 
-export const Translate = (
-    input,
-    translator,
-    splitDelim = "",
-    joinDelim = " "
-) => {
+const translate = (input, isEncoder, splitDelim, joinDelim) => {
+    const translator = isEncoder ? encoder : decoder;
+    console.log(encoder, decoder);
+    console.log(input, isEncoder, `*${splitDelim}*`, `*${joinDelim}*`);
     const strArr = input.split(splitDelim);
-    strArr.every();
-    return input.map((char) => translator[char]).join(joinDelim);
+    console.log(strArr);
+    //strArr.every();
+    const result = strArr.map((char) =>
+        isEncoder ? translator[char.toUpperCase()] : translator[char]
+    );
+    console.log(result);
+    return result.join(joinDelim);
 };
 
-export const morToEng = (morse) => {
-    const keys = Object.keys(encoder);
-    return morse
-        .split(" ")
-        .map((code) => keys.find((key) => encoder[key] === code))
-        .join("");
-};
+// export const morToEng = (morse) => {
+//     const keys = Object.keys(encoder);
+//     return morse
+//         .split(" ")
+//         .map((code) => keys.find((key) => encoder[key] === code))
+//         .join("");
+// };
+
+export default translate;
