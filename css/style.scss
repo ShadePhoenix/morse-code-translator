@@ -14,7 +14,6 @@
 }
 
 .root {
-    //background-image: url(../images/wood\ _texture.jpg);
     &__header {
         @extend %flex;
         flex-direction: column;

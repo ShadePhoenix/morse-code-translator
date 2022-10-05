@@ -1,6 +1,18 @@
 # Morse Code Translator
 
-## MVP
+## Intro
+
+In this project we had to create a simple website with the ability to translate from English to Morse Code and vice-versa.
+
+### Skills
+
+-   JavaScript
+-   HTML
+-   SCSS
+
+### Challenges
+
+# MVP
 
 -   Create a user interface that allows the user to either input some English text or some Morse Code
 -   Create JS functions that would allow the user to:

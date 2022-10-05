@@ -75,12 +75,4 @@ const translate = (input, isEncoder, splitDelim, joinDelim) => {
     return result.join(joinDelim);
 };
 
-// export const morToEng = (morse) => {
-//     const keys = Object.keys(encoder);
-//     return morse
-//         .split(" ")
-//         .map((code) => keys.find((key) => encoder[key] === code))
-//         .join("");
-// };
-
 export default translate;
